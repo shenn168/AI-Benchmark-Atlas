@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "AI Benchmark Atlas",
+  "version": "1.0.0",
+  "description": "Offline-first knowledge base for AI model benchmarks. Quick lookup with non-technical and technical explanations, model scores, and auto-update discovery.",
+  "author": "AI Benchmark Atlas Team",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
