@@ -1,0 +1,387 @@
+{
+  "version": "1.2.0",
+  "lastUpdated": "2026-04-09",
+  "benchmarks": [
+    {
+      "id": "swebench-verified",
+      "name": "SWE-Bench Verified",
+      "category": "Coding",
+      "icon": "💻",
+      "shortDescription": "Real-world GitHub issue resolution in production codebases. Gold standard for practical software engineering.",
+      "levels": {
+        "nonTechnical": {
+          "title": "Plain English",
+          "content": "This benchmark tests if an AI can fix actual bugs from real GitHub projects, like a professional developer would. It requires understanding large codebases, planning changes, and producing working fixes."
+        },
+        "intermediate": {
+          "title": "Intermediate",
+          "content": "SWE-Bench Verified consists of ~500 human-verified GitHub issues. Models must edit code across files to resolve them. High scores indicate strong repository-level reasoning, debugging, and code generation capabilities."
+        },
+        "expert": {
+          "title": "Expert / Research-Level",
+          "content": "Evaluates agentic coding with full context. Top models now exceed 80% resolution rate (v2.0 agent setups). Still distinguishes frontier systems due to multi-step planning, error recovery, and handling of dependencies. Contamination-resistant compared to synthetic coding tests."
+        }
+      },
+      "scores": [
+        {
+          "model": "Claude Opus 4.6",
+          "score": 80.8,
+          "date": "2026-03",
+          "note": "High reasoning mode; leads or ties many evaluations"
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": 80.6,
+          "date": "2026-03"
+        },
+        {
+          "model": "GPT-5.4",
+          "score": 80.0,
+          "date": "2026-03",
+          "note": "Approximate; strong on related Pro variant"
+        },
+        {
+          "model": "Claude Sonnet 4.6",
+          "score": 79.6,
+          "date": "2026-03"
+        },
+        {
+          "model": "Grok 4",
+          "score": 75.0,
+          "date": "2026-03",
+          "note": "Reported leadership in some raw SWE-bench runs"
+        }
+      ],
+      "sources": [
+        "https://www.swebench.com/",
+        "https://www.morphllm.com/best-ai-model-for-coding",
+        "https://benchlm.ai/coding"
+      ],
+      "dateAdded": "2025-01-01",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "gpqa-diamond",
+      "name": "GPQA Diamond",
+      "category": "Reasoning",
+      "icon": "🧠",
+      "shortDescription": "PhD-level science questions designed to be Google-proof and extremely difficult.",
+      "levels": {
+        "nonTechnical": {
+          "title": "Plain English",
+          "content": "Extremely hard graduate-level science questions that even experts struggle with. Tests deep understanding rather than memorized facts."
+        },
+        "intermediate": {
+          "title": "Intermediate",
+          "content": "198 challenging questions in biology, chemistry, physics, etc. PhD experts score ~65%; non-experts with search score much lower. Requires multi-step reasoning and domain expertise."
+        },
+        "expert": {
+          "title": "Expert / Research-Level",
+          "content": "One of the few remaining discriminative reasoning benchmarks. Top models approach 90-94% with thinking modes, but gaps persist in true generalization vs. pattern matching."
+        }
+      },
+      "scores": [
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": 94.3,
+          "date": "2026-04"
+        },
+        {
+          "model": "GPT-5.4",
+          "score": 92.8,
+          "date": "2026-04"
+        },
+        {
+          "model": "Claude Opus 4.6",
+          "score": 91.3,
+          "date": "2026-03"
+        },
+        {
+          "model": "Grok 4",
+          "score": 88.0,
+          "date": "2026-03",
+          "note": "Approximate competitive score"
+        }
+      ],
+      "sources": [
+        "https://artificialanalysis.ai/evaluations/gpqa-diamond",
+        "https://pricepertoken.com/leaderboards/benchmark/gpqa"
+      ],
+      "dateAdded": "2025-01-01",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "livecodebench",
+      "name": "LiveCodeBench",
+      "category": "Coding",
+      "icon": "🔢",
+      "shortDescription": "Contamination-free coding problems from ongoing competitive programming contests.",
+      "levels": {
+        "nonTechnical": {
+          "title": "Plain English",
+          "content": "Fresh coding challenges that change regularly so AIs can't just memorize answers. Tests real problem-solving ability."
+        },
+        "intermediate": {
+          "title": "Intermediate",
+          "content": "Evaluates code generation and algorithmic thinking on new contest problems. Includes self-repair and multiple languages."
+        },
+        "expert": {
+          "title": "Expert / Research-Level",
+          "content": "Strong signal for algorithmic capability. Top models reach 85-91% on recent versions; distinguishes models better than saturated HumanEval-style tests."
+        }
+      },
+      "scores": [
+        {
+          "model": "Gemini 3 Pro Preview",
+          "score": 91.7,
+          "date": "2026-04"
+        },
+        {
+          "model": "DeepSeek V3.2",
+          "score": 89.6,
+          "date": "2026-04"
+        },
+        {
+          "model": "GPT-5.4",
+          "score": 77.5,
+          "date": "2026-01",
+          "note": "From LiveBench-related coding average; competitive in broader evals"
+        }
+      ],
+      "sources": [
+        "https://artificialanalysis.ai/evaluations/livecodebench",
+        "https://livecodebench.github.io/"
+      ],
+      "dateAdded": "2025-06-01",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "humanitys-last-exam",
+      "name": "Humanity's Last Exam (HLE)",
+      "category": "Reasoning",
+      "icon": "📖",
+      "shortDescription": "2,500 expert-level multi-modal questions across 100+ subjects at the frontier of human knowledge.",
+      "levels": {
+        "nonTechnical": {
+          "title": "Plain English",
+          "content": "An incredibly tough 'final exam' of academic questions designed to challenge even the smartest AIs across science, math, humanities, and more."
+        },
+        "intermediate": {
+          "title": "Intermediate",
+          "content": "Broad coverage with held-out private test set to prevent overfitting. Tests depth of reasoning and knowledge integration rather than narrow memorization."
+        },
+        "expert": {
+          "title": "Expert / Research-Level",
+          "content": "Intended as a durable frontier benchmark. Current top scores ~35-53% (with tools); highlights remaining gaps in true expert-level understanding."
+        }
+      },
+      "scores": [
+        {
+          "model": "Claude Opus 4.6",
+          "score": 53.1,
+          "date": "2026-03",
+          "note": "With tools in some reports"
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": 51.4,
+          "date": "2026-03"
+        },
+        {
+          "model": "GPT-5.4",
+          "score": 41.6,
+          "date": "2026-04"
+        }
+      ],
+      "sources": [
+        "https://agi.safe.ai/",
+        "https://artificialanalysis.ai/evaluations/humanitys-last-exam"
+      ],
+      "dateAdded": "2026-02-01",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "arc-agi-2",
+      "name": "ARC-AGI-2",
+      "category": "Reasoning",
+      "icon": "🧩",
+      "shortDescription": "Abstract reasoning puzzles testing core intelligence and generalization (non-memorizable).",
+      "levels": {
+        "nonTechnical": {
+          "title": "Plain English",
+          "content": "Visual and abstract puzzles that require genuine novel reasoning, not just pattern recall from training data."
+        },
+        "intermediate": {
+          "title": "Intermediate",
+          "content": "Measures fluid intelligence through grid-based transformation tasks. Pure LLMs previously scored near 0%; multimodal versions show progress."
+        },
+        "expert": {
+          "title": "Expert / Research-Level",
+          "content": "Strong signal for AGI-like abstraction. Top models now reach 60-77% on v2; interactive v3 expected to raise the bar further."
+        }
+      },
+      "scores": [
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": 77.1,
+          "date": "2026-03"
+        },
+        {
+          "model": "Claude Opus 4.6",
+          "score": 68.8,
+          "date": "2026-03"
+        },
+        {
+          "model": "GPT-5.4",
+          "score": 52.9,
+          "date": "2026-03"
+        }
+      ],
+      "sources": [
+        "https://arcprize.org/",
+        "https://designforonline.com/the-best-ai-models-so-far-in-2026/"
+      ],
+      "dateAdded": "2025-01-01",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "lmsys-chatbot-arena",
+      "name": "LMSYS Chatbot Arena (Elo)",
+      "category": "General",
+      "icon": "🏆",
+      "shortDescription": "Crowdsourced blind human preference battles for overall conversational quality.",
+      "levels": {
+        "nonTechnical": {
+          "title": "Plain English",
+          "content": "Real users vote on which AI gives better answers in anonymous chats. Reflects practical usefulness and 'vibes'."
+        },
+        "intermediate": {
+          "title": "Intermediate",
+          "content": "Elo rating system from thousands of pairwise comparisons. Covers helpfulness, coherence, creativity, and instruction following."
+        },
+        "expert": {
+          "title": "Expert / Research-Level",
+          "content": "Robust human-aligned metric less prone to benchmark gaming. Top models cluster tightly around 1490-1505 Elo in 2026."
+        }
+      },
+      "scores": [
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": 1505,
+          "date": "2026-04",
+          "note": "Approximate recent peak"
+        },
+        {
+          "model": "Claude Opus 4.6 Thinking",
+          "score": 1503,
+          "date": "2026-04"
+        },
+        {
+          "model": "Grok 4.20",
+          "score": 1496,
+          "date": "2026-04"
+        },
+        {
+          "model": "GPT-5.4",
+          "score": 1495,
+          "date": "2026-04"
+        }
+      ],
+      "sources": [
+        "https://lmarena-ai.github.io/",
+        "https://chat.lmsys.org/?leaderboard"
+      ],
+      "dateAdded": "2025-01-01",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "terminal-bench-2",
+      "name": "Terminal-Bench 2.0",
+      "category": "Agentic",
+      "icon": "🖥️",
+      "shortDescription": "Autonomous terminal and DevOps tasks in real shell environments.",
+      "levels": {
+        "nonTechnical": {
+          "title": "Plain English",
+          "content": "Tests if an AI can use the command line like a sysadmin or engineer to complete practical tasks."
+        },
+        "intermediate": {
+          "title": "Intermediate",
+          "content": "Realistic workflows involving environment setup, scripting, debugging, and tool use in a terminal."
+        },
+        "expert": {
+          "title": "Expert / Research-Level",
+          "content": "Strong agentic signal beyond pure code generation. Highlights differences in planning, tool calling reliability, and execution feedback loops."
+        }
+      },
+      "scores": [
+        {
+          "model": "GPT-5.4",
+          "score": 77.3,
+          "date": "2026-03"
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": 68.5,
+          "date": "2026-03"
+        },
+        {
+          "model": "Claude Opus 4.6",
+          "score": 65.4,
+          "date": "2026-03"
+        }
+      ],
+      "sources": [
+        "https://designforonline.com/the-best-ai-models-so-far-in-2026/",
+        "https://www.morphllm.com/best-ai-model-for-coding"
+      ],
+      "dateAdded": "2026-01-01",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "category": "Knowledge",
+      "icon": "📚",
+      "shortDescription": "Enhanced graduate-level multi-choice questions across many subjects (harder successor to original MMLU).",
+      "levels": {
+        "nonTechnical": {
+          "title": "Plain English",
+          "content": "Tough multiple-choice test covering advanced knowledge in science, humanities, law, and more."
+        },
+        "intermediate": {
+          "title": "Intermediate",
+          "content": "More reasoning-heavy than basic MMLU, with 10 options per question to reduce guessing."
+        },
+        "expert": {
+          "title": "Expert / Research-Level",
+          "content": "Still useful for broad knowledge assessment but increasingly saturated at the frontier (>90% for top models)."
+        }
+      },
+      "scores": [
+        {
+          "model": "GPT-5.4",
+          "score": 97.8,
+          "date": "2026-03",
+          "note": "Approximate from composite reports"
+        },
+        {
+          "model": "Claude Opus 4.6",
+          "score": 97.2,
+          "date": "2026-03"
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": 96.5,
+          "date": "2026-03"
+        }
+      ],
+      "sources": [
+        "https://onyx.app/llm-leaderboard",
+        "https://llm-stats.com/benchmarks"
+      ],
+      "dateAdded": "2025-01-01",
+      "lastUpdated": "2026-04-09"
+    }
+  ]
+}
