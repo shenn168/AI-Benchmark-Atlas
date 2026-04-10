@@ -1,0 +1,995 @@
+/* =============================================
+   AI Benchmark Atlas — Full Reference Styles
+   Complete file — includes all base styles
+   and update section styles
+   ============================================= */
+
+/* ---- CSS Variables ---- */
+:root {
+  --ref-bg: #08081a;
+  --ref-sidebar-bg: #0d0d22;
+  --ref-card-bg: #111130;
+  --ref-elevated: #18183d;
+  --ref-text: #e4e4f0;
+  --ref-text-sec: #9898b8;
+  --ref-text-muted: #5a5a78;
+  --ref-accent: #667eea;
+  --ref-accent-hover: #7b93ff;
+  --ref-accent-bg: rgba(102, 126, 234, 0.12);
+  --ref-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --ref-border: rgba(255, 255, 255, 0.07);
+  --ref-success: #4ade80;
+  --ref-warning: #fbbf24;
+  --ref-danger: #f87171;
+  --ref-radius: 12px;
+  --ref-radius-sm: 8px;
+}
+
+/* ---- Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--ref-bg);
+  color: var(--ref-text);
+  line-height: 1.6;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =============================================
+   LAYOUT
+   ============================================= */
+
+.ref-app {
+  display: flex;
+  height: 100vh;
+}
+
+/* =============================================
+   SIDEBAR
+   ============================================= */
+
+.ref-sidebar {
+  width: 240px;
+  background: var(--ref-sidebar-bg);
+  border-right: 1px solid var(--ref-border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.ref-sidebar-header {
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--ref-border);
+}
+
+.ref-logo {
+  font-size: 24px;
+}
+
+.ref-sidebar-header h1 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ref-accent);
+}
+
+/* ---- Sidebar Navigation ---- */
+.ref-nav {
+  flex: 1;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ref-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  border-radius: var(--ref-radius-sm);
+  color: var(--ref-text-sec);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  position: relative;
+}
+
+.ref-nav-btn:hover {
+  background: var(--ref-elevated);
+  color: var(--ref-text);
+}
+
+.ref-nav-btn.active {
+  background: var(--ref-accent-bg);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---- Update Badge ---- */
+.ref-badge {
+  background: var(--ref-danger);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  margin-left: auto;
+}
+
+/* ---- Sidebar Footer ---- */
+.ref-sidebar-footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--ref-border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--ref-text-muted);
+}
+
+/* ---- Connection Dot ---- */
+.atlas-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.atlas-dot-online {
+  background: var(--ref-success);
+  box-shadow: 0 0 4px var(--ref-success);
+}
+
+.atlas-dot-offline {
+  background: var(--ref-text-muted);
+}
+
+.atlas-dot-checking {
+  background: var(--ref-warning);
+  animation: refPulse 1s infinite;
+}
+
+@keyframes refPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* =============================================
+   MAIN CONTENT AREA
+   ============================================= */
+
+.ref-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 32px;
+}
+
+.ref-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ref-main::-webkit-scrollbar-thumb {
+  background: var(--ref-text-muted);
+  border-radius: 3px;
+}
+
+.ref-main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ---- Section Fade In ---- */
+.ref-section {
+  animation: refFadeIn 0.2s ease;
+}
+
+@keyframes refFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   TOOLBAR — SEARCH & CATEGORY FILTERS
+   ============================================= */
+
+.ref-toolbar {
+  margin-bottom: 20px;
+}
+
+.ref-search {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 16px;
+  background: var(--ref-card-bg);
+  border: 1px solid var(--ref-border);
+  border-radius: var(--ref-radius-sm);
+  color: var(--ref-text);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 12px;
+}
+
+.ref-search:focus {
+  border-color: var(--ref-accent);
+}
+
+.ref-search::placeholder {
+  color: var(--ref-text-muted);
+}
+
+/* ---- Category Bar ---- */
+.ref-category-bar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.ref-cat-btn {
+  padding: 5px 14px;
+  background: var(--ref-card-bg);
+  border: 1px solid var(--ref-border);
+  border-radius: 20px;
+  color: var(--ref-text-sec);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ref-cat-btn:hover {
+  border-color: var(--ref-accent);
+  color: var(--ref-text);
+}
+
+.ref-cat-btn.active {
+  background: var(--ref-accent-bg);
+  border-color: var(--ref-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* =============================================
+   BENCHMARK GRID
+   ============================================= */
+
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+  gap: 16px;
+}
+
+/* =============================================
+   BENCHMARK FULL CARD
+   ============================================= */
+
+.ref-full-card {
+  background: var(--ref-card-bg);
+  border: 1px solid var(--ref-border);
+  border-radius: var(--ref-radius);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.ref-full-card:hover {
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+/* ---- Card Header ---- */
+.ref-full-card-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--ref-border);
+}
+
+.ref-full-card-icon {
+  font-size: 28px;
+}
+
+.ref-full-card-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.ref-full-card-cat {
+  font-size: 11px;
+  background: var(--ref-accent-bg);
+  color: var(--ref-accent);
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.ref-full-card-desc {
+  font-size: 13px;
+  color: var(--ref-text-sec);
+  margin-top: 2px;
+}
+
+/* ---- Card Body ---- */
+.ref-full-card-body {
+  padding: 16px 20px;
+}
+
+/* =============================================
+   DEPTH TABS (Full Reference Cards)
+   ============================================= */
+
+.ref-full-depth-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.ref-full-depth-tab {
+  padding: 7px 16px;
+  background: var(--ref-bg);
+  border: 1px solid var(--ref-border);
+  border-radius: var(--ref-radius-sm);
+  color: var(--ref-text-sec);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ref-full-depth-tab:hover {
+  border-color: var(--ref-accent);
+  color: var(--ref-text);
+}
+
+.ref-full-depth-tab.active {
+  background: var(--ref-accent-bg);
+  border-color: var(--ref-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---- Depth Content ---- */
+.ref-full-depth-content {
+  font-size: 14px;
+  color: var(--ref-text-sec);
+  line-height: 1.75;
+  margin-bottom: 18px;
+  padding: 14px;
+  background: var(--ref-bg);
+  border-radius: var(--ref-radius-sm);
+  border: 1px solid var(--ref-border);
+}
+
+/* =============================================
+   SCORE TABLE
+   ============================================= */
+
+.ref-scores-header {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ref-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.ref-score-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.ref-score-table th {
+  text-align: left;
+  padding: 6px 10px;
+  color: var(--ref-text-muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--ref-border);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.ref-score-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--ref-text-sec);
+}
+
+.ref-score-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ref-score-table tr:hover td {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.ref-score-val {
+  font-weight: 700;
+  color: var(--ref-text);
+}
+
+/* ---- Score Bar ---- */
+.ref-bar-cell {
+  width: 30%;
+}
+
+.ref-bar-wrap {
+  width: 100%;
+  height: 8px;
+  background: var(--ref-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ref-bar-fill {
+  height: 100%;
+  background: var(--ref-gradient);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.ref-score-note-text {
+  font-size: 10px;
+  color: var(--ref-text-muted);
+  font-style: italic;
+}
+
+/* =============================================
+   SOURCES
+   ============================================= */
+
+.ref-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--ref-border);
+}
+
+.ref-source-chip {
+  font-size: 11px;
+  color: var(--ref-accent);
+  text-decoration: none;
+  background: var(--ref-accent-bg);
+  padding: 3px 10px;
+  border-radius: 12px;
+  transition: background 0.15s;
+}
+
+.ref-source-chip:hover {
+  background: rgba(102, 126, 234, 0.25);
+  text-decoration: underline;
+}
+
+/* =============================================
+   SECTION HEADER
+   ============================================= */
+
+.ref-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ref-section-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+
+.ref-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: var(--ref-radius-sm);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ref-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ref-btn-primary {
+  background: var(--ref-gradient);
+  color: #fff;
+}
+
+.ref-btn-primary:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.ref-btn-success {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--ref-success);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.ref-btn-success:hover:not(:disabled) {
+  background: rgba(74, 222, 128, 0.25);
+}
+
+.ref-btn-danger {
+  background: rgba(248, 113, 113, 0.15);
+  color: var(--ref-danger);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.ref-btn-danger:hover:not(:disabled) {
+  background: rgba(248, 113, 113, 0.25);
+}
+
+.ref-btn-outline {
+  background: none;
+  color: var(--ref-text-sec);
+  border: 1px solid var(--ref-border);
+}
+
+.ref-btn-outline:hover:not(:disabled) {
+  border-color: var(--ref-accent);
+  color: var(--ref-text);
+}
+
+/* ---- Button Sizes ---- */
+.ref-btn-sm {
+  padding: 5px 12px;
+  font-size: 11px;
+}
+
+.ref-btn-lg {
+  padding: 12px 32px;
+  font-size: 14px;
+}
+
+/* =============================================
+   EMPTY STATE
+   ============================================= */
+
+.ref-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ref-text-muted);
+}
+
+.ref-empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.ref-empty-state h3 {
+  font-size: 18px;
+  color: var(--ref-text-sec);
+  margin-bottom: 6px;
+}
+
+.ref-empty-state p {
+  font-size: 13px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =============================================
+   UPDATES SECTION
+   ============================================= */
+
+/* ---- Update Group Titles ---- */
+.ref-update-group-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ref-text-sec);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ref-border);
+}
+
+.ref-update-group-title:first-of-type {
+  margin-top: 0;
+}
+
+/* ---- Bulk Action Bar ---- */
+.ref-update-bulk-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ref-card-bg);
+  border: 1px solid var(--ref-border);
+  border-radius: var(--ref-radius);
+  padding: 12px 18px;
+  margin-bottom: 16px;
+}
+
+.ref-update-bulk-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ref-text);
+}
+
+.ref-update-bulk-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---- Update Card ---- */
+.ref-update-card {
+  background: var(--ref-card-bg);
+  border: 1px solid var(--ref-border);
+  border-radius: var(--ref-radius);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.ref-update-card:hover {
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+.ref-update-dismissed {
+  opacity: 0.4;
+}
+
+.ref-update-dismissed:hover {
+  opacity: 0.6;
+}
+
+/* ---- Update Card Icon ---- */
+.ref-update-card-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ---- Update Card Info ---- */
+.ref-update-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ref-update-card-name {
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ---- Update Type Labels ---- */
+.ref-update-card-type {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.ref-update-type-new {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--ref-success);
+}
+
+.ref-update-type-update {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--ref-warning);
+}
+
+/* ---- Update Card Description ---- */
+.ref-update-card-desc {
+  font-size: 12px;
+  color: var(--ref-text-sec);
+  margin-top: 4px;
+}
+
+/* ---- Update Card Preview ---- */
+.ref-update-preview {
+  font-size: 11px;
+  color: var(--ref-text-muted);
+  margin-top: 6px;
+  line-height: 1.5;
+  max-height: 48px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* ---- Update Card Meta ---- */
+.ref-update-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.ref-update-meta-item {
+  font-size: 10px;
+  color: var(--ref-text-muted);
+}
+
+/* ---- Update Card Actions ---- */
+.ref-update-card-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  align-items: center;
+  margin-top: 2px;
+}
+
+/* ---- Update Status Labels ---- */
+.ref-update-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.ref-update-status-approved {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--ref-success);
+}
+
+.ref-update-status-dismissed {
+  background: rgba(90, 90, 120, 0.15);
+  color: var(--ref-text-muted);
+}
+
+/* ---- Apply Bar ---- */
+.ref-update-apply-bar {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ref-border);
+  display: flex;
+  justify-content: center;
+}
+
+/* =============================================
+   SETTINGS SECTION
+   ============================================= */
+
+.ref-settings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.ref-setting-card {
+  background: var(--ref-card-bg);
+  border: 1px solid var(--ref-border);
+  border-radius: var(--ref-radius);
+  padding: 16px 20px;
+}
+
+.ref-setting-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--ref-text);
+}
+
+.ref-setting-card p {
+  font-size: 12px;
+  color: var(--ref-text-sec);
+  margin-bottom: 10px;
+}
+
+.ref-setting-card small {
+  font-size: 10px;
+  color: var(--ref-text-muted);
+  display: block;
+  margin-top: 4px;
+  word-break: break-all;
+}
+
+/* ---- Settings Input ---- */
+.ref-input {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--ref-bg);
+  border: 1px solid var(--ref-border);
+  border-radius: var(--ref-radius-sm);
+  color: var(--ref-text);
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.ref-input:focus {
+  border-color: var(--ref-accent);
+}
+
+/* ---- Settings Select ---- */
+.ref-select {
+  padding: 8px 12px;
+  background: var(--ref-bg);
+  border: 1px solid var(--ref-border);
+  border-radius: var(--ref-radius-sm);
+  color: var(--ref-text);
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.ref-select:focus {
+  border-color: var(--ref-accent);
+}
+
+/* ---- Settings Stats ---- */
+.ref-stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--ref-text-sec);
+}
+
+.ref-stat-row span:first-child {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ref-accent);
+  line-height: 1;
+}
+
+/* ---- Settings Actions ---- */
+.ref-setting-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* =============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================= */
+
+@media (max-width: 900px) {
+  .ref-sidebar {
+    width: 200px;
+  }
+
+  .ref-main {
+    padding: 16px 20px;
+  }
+
+  .ref-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .ref-sidebar {
+    width: 60px;
+    overflow: hidden;
+  }
+
+  .ref-sidebar-header h1 {
+    display: none;
+  }
+
+  .ref-nav-btn {
+    justify-content: center;
+    padding: 10px 8px;
+    font-size: 16px;
+  }
+
+  .ref-nav-btn span:not(.ref-badge) {
+    display: none;
+  }
+
+  .ref-sidebar-footer span:last-child {
+    display: none;
+  }
+
+  .ref-main {
+    padding: 12px 14px;
+  }
+
+  .ref-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ref-full-depth-tabs {
+    flex-direction: column;
+  }
+
+  .ref-update-card {
+    flex-direction: column;
+  }
+
+  .ref-update-card-actions {
+    align-self: flex-end;
+  }
+
+  .ref-update-bulk-bar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .ref-section-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
+/* =============================================
+   SCROLLBAR (Global)
+   ============================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ref-text-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ref-text-sec);
+}
+
+/* =============================================
+   SELECTION HIGHLIGHT
+   ============================================= */
+
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #fff;
+}
+
+/* =============================================
+   FOCUS OUTLINES (Accessibility)
+   ============================================= */
+
+*:focus-visible {
+  outline: 2px solid var(--ref-accent);
+  outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+input:focus:not(:focus-visible) {
+  outline: none;
+}
+
+select:focus:not(:focus-visible) {
+  outline: none;
+}

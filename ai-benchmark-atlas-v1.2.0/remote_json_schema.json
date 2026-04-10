@@ -1,0 +1,40 @@
+{
+  "version": "1.1.0",
+  "lastUpdated": "2025-07-01",
+  "benchmarks": [
+    {
+      "id": "unique-benchmark-id",
+      "name": "Benchmark Name",
+      "category": "Coding",
+      "icon": "🛠️",
+      "shortDescription": "One line summary.",
+      "levels": {
+        "nonTechnical": {
+          "title": "Plain English",
+          "content": "Full plain english explanation..."
+        },
+        "intermediate": {
+          "title": "Intermediate",
+          "content": "Full intermediate explanation..."
+        },
+        "expert": {
+          "title": "Expert / Research-Level",
+          "content": "Full expert explanation..."
+        }
+      },
+      "scores": [
+        {
+          "model": "Model Name",
+          "score": 72.5,
+          "date": "2025-06",
+          "note": "optional note"
+        }
+      ],
+      "sources": [
+        "https://example.com"
+      ],
+      "dateAdded": "2025-01-01",
+      "lastUpdated": "2025-07-01"
+    }
+  ]
+}

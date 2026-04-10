@@ -1,0 +1,22 @@
+{
+  "version": "1.3.0",
+  "lastUpdated": "2026-04-10",
+  "benchmarks": [
+    { "id": "swe-bench-verified",    "name": "SWE-bench Verified",            "syncedFrom": "benchmarks.js", "lastUpdated": "2026-04-10" },
+    { "id": "swe-bench-pro",         "name": "SWE-bench Pro",                 "syncedFrom": "benchmarks.js", "lastUpdated": "2025-06-25" },
+    { "id": "swe-bench-multilingual","name": "SWE-bench Multilingual",        "syncedFrom": "benchmarks.js", "lastUpdated": "2025-06-25" },
+    { "id": "swe-bench-multimodal",  "name": "SWE-bench Multimodal",          "syncedFrom": "benchmarks.js", "lastUpdated": "2025-06-25" },
+    { "id": "livecodebench",         "name": "LiveCodeBench",                 "syncedFrom": "benchmarks.js", "lastUpdated": "2026-04-10" },
+    { "id": "gpqa-diamond",          "name": "GPQA Diamond",                  "syncedFrom": "benchmarks.js", "lastUpdated": "2026-04-10" },
+    { "id": "usamo",                 "name": "USAMO",                         "syncedFrom": "benchmarks.js", "lastUpdated": "2025-06-25" },
+    { "id": "mmmu",                  "name": "MMMU",                          "syncedFrom": "benchmarks.js", "lastUpdated": "2025-06-25" },
+    { "id": "charxiv-reasoning",     "name": "CharXiv Reasoning",             "syncedFrom": "benchmarks.js", "lastUpdated": "2025-06-25" },
+    { "id": "graphwalks-bfs",        "name": "GraphWalks BFS 256K-1M",        "syncedFrom": "benchmarks.js", "lastUpdated": "2025-06-25" },
+    { "id": "arc-agi-2",             "name": "ARC-AGI-2",                     "syncedFrom": "benchmarks.js", "lastUpdated": "2026-04-10" },
+    { "id": "hle",                   "name": "HLE (Humanity's Last Exam)",    "syncedFrom": "benchmarks.js", "lastUpdated": "2026-04-10" },
+    { "id": "terminal-bench-2",      "name": "Terminal-Bench 2.0",            "syncedFrom": "benchmarks.js", "lastUpdated": "2026-04-10" },
+    { "id": "osworld",               "name": "OSWorld",                       "syncedFrom": "benchmarks.js", "lastUpdated": "2025-06-25" },
+    { "id": "lmsys-chatbot-arena",   "name": "LMSYS Chatbot Arena (Elo)",     "syncedFrom": "benchmarks.js", "lastUpdated": "2026-04-10" },
+    { "id": "mmlu-pro",              "name": "MMLU-Pro",                      "syncedFrom": "benchmarks.js", "lastUpdated": "2026-04-10" }
+  ]
+}
